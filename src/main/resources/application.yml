@@ -1,0 +1,16 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: zuulrouter
+    
+zuul:
+  routes:
+    microa:
+      path: /api/v1/getCustomers
+      service-id: microa
+      strip-prefix: false
+    microb:
+      path: /api/v2/getCustomers
+      service-id: microb
+      strip-prefix: false     
